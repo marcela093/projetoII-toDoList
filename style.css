@@ -25,12 +25,13 @@ body {
 .content__input {
     height: 20vh;
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
 }
 
 .input-de-texto {
     border: none;  
+    text-align: center;
 }
 
 button {
@@ -52,15 +53,40 @@ ul {
 }
 
 @media (min-width: 768px) {
+    body{
+        display: flex;
+        justify-content: center;
+    }
+
     .container {
-        width: 50%;
+        width: 40%;
+        height: 95vh;
+        margin-top: 5%;
     }  
+}
+
+@media(min-width: 1024px){
+    h1, input, button{
+        font-size: 16px;
+    }
+}    
+
+@media(min-width: 1300px){
+    .container {
+        width: 25%;
+        height: 95vh;
+        margin-bottom: 5%;
+    }
 }
 
 @media (min-width: 1440px) {
     .container {
-        width: 25%;
-        height: 80vh;
-        padding-top: 20px;
+        width: 35%;
+        height: 95vh;
+        margin-bottom: 5%;
     }
+    h1, input, button{
+        font-size: 22px;
+    }
+    
 }

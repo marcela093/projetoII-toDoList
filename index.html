@@ -13,17 +13,15 @@
                 <h1>Adicione uma nova tarefa</h1>
         </div>
          <div class="content__input">
-                <input type="text" class="input-de-texto" placeholder="Digite aqui">
-         </div>   
-         <div class="content__botao">
-             <button>add</button>
-             <span id="erro"></span>
-         </div>
-         <div class="content__tarefas">
-             <ul id="lista">
-             </ul>
-             
-         </div>
+             <form id="formulario" >
+                <input type="text" maxlength="120" class="input-de-texto" placeholder="Digite aqui">
+                <button>add</button>
+                <span></span>
+             </form>
+        </div>
+        <div class="content__tarefas">
+             <ul id="lista"></ul>
+        </div>
     </section>
     
 <script src="./js/script.js"></script>

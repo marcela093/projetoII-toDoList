@@ -5,14 +5,13 @@ body {
     margin: 0;   
     background-image: linear-gradient(to left, #8ec5, #e0c3fc);
     box-sizing: border-box;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 .container {
     background-color: #ffffff;
+    width: 100%;
 }
+
 .content__titulo {
     box-shadow: 0px 1px rgba(0,0,0,0.24);
     align-items: center;
@@ -31,8 +30,7 @@ body {
 }
 
 .input-de-texto {
-    border: none;
-    
+    border: none;  
 }
 
 button {
@@ -49,3 +47,20 @@ button {
     height: 60vh;
 }
 
+ul {
+    list-style: none;
+}
+
+@media (min-width: 768px) {
+    .container {
+        width: 50%;
+    }  
+}
+
+@media (min-width: 1440px) {
+    .container {
+        width: 25%;
+        height: 80vh;
+        padding-top: 20px;
+    }
+}

@@ -30,8 +30,7 @@ body {
 }
 
 .input-de-texto {
-    border: none;
-    
+    border: none;  
 }
 
 button {
@@ -48,3 +47,20 @@ button {
     height: 60vh;
 }
 
+ul {
+    list-style: none;
+}
+
+@media (min-width: 768px) {
+    .container {
+        width: 50%;
+    }  
+}
+
+@media (min-width: 1440px) {
+    .container {
+        width: 25%;
+        height: 80vh;
+        padding-top: 20px;
+    }
+}

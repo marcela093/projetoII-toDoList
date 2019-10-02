@@ -48,6 +48,10 @@ button {
     text-transform: uppercase;
 }
 
+#botoes {
+    display: flex;
+    justify-content: space-around;
+}
 .content__tarefas {
     height: 60vh;
 }
@@ -65,13 +69,11 @@ li {
     color: rgb(153, 149, 149);
 }
 
-.todos-lidos {
-    background-color:#ba7af8;
+.tarefa_feita {
+    width: 20%;
+    font-size: 15px;
 }
 
-.desmarcar-tudo {
-    background-color:#ba7af8;
-}
 
 .excluir-botao{
     display: none;

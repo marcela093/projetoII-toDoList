@@ -35,13 +35,23 @@ formulario.addEventListener("submit", function(evento){
             if(evento){
                 listaTarefa.classList.add('excluir-botao');
             }
-        })
-        
-    }   
-   
-    
-    
-})
+        });
+    } 
+});
+
+const divBotao = document.querySelector('.content__tarefas');
+const botaoExcluirTudo = document.createElement('button');
+divBotao.appendChild(botaoExcluirTudo);
+botaoExcluirTudo.textContent = 'Excluir Tarefas';
+botaoExcluirTudo.classList.add('botao-excluir-tudo', 'botoes');
+
+botaoExcluirTudo.addEventListener('click', function(evento){
+    const lista = document.getElementById('lista');
+    lista.classList.add('tarefas-excluidas');
+});
+
+
+
 
 // Fase 3
 // Marcar todos os itens como feito

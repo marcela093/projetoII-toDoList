@@ -77,6 +77,18 @@ li {
     display: none;
 }
 
+.botao-excluir-tudo{
+    background-color: red;
+    color: white;
+    font-size: 12px;
+    width: 10vw;
+}
+
+.tarefas-excluidas{
+    display: none;
+}
+
+
 @media (min-width: 768px) {
     body{
         display: flex;

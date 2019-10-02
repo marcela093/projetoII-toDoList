@@ -28,13 +28,13 @@ formulario.addEventListener("submit", function(evento){
         confere.textContent = "x";
         listaTarefa.addEventListener("click", function(evento){
         listaTarefa.classList.add("excluir");
-         
-
-        formulario.reset();  
         })
+        formulario.reset();  
+    }
+
     
 
-
+})
 // Fase 3
 // Marcar todos os itens como feito
 // Limpar lista, excluir todos os itens da lista

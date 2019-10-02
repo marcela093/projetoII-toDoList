@@ -1,5 +1,8 @@
+
+
 const formulario = document.getElementById("formulario");
 const lista = document.getElementById("lista");
+
 formulario.addEventListener("submit", function(evento){
     evento.preventDefault();
     let inputUsuario = document.querySelector(".input-de-texto");
@@ -12,12 +15,6 @@ formulario.addEventListener("submit", function(evento){
             erro.textContent = "Digite a tarefa";
             erro.classList.add("erro");
 
-     let todosLidos = document.createElement("button");
-     todosLidos.addEventListener("click", function(evento){
-     lista.appendChild(todosLidos);
-     todosLidos.classList.add("todos-lidos");
-    })
-
     }else { 
         let listaTarefa = document.createElement("li");
         lista.appendChild(listaTarefa);
@@ -28,19 +25,19 @@ formulario.addEventListener("submit", function(evento){
         confere.textContent = "x";
         listaTarefa.addEventListener("click", function(evento){
         listaTarefa.classList.add("excluir");
-        })
+        })    
         formulario.reset();  
     }
-
-    
-
 })
-// Fase 3
-// Marcar todos os itens como feito
-// Limpar lista, excluir todos os itens da lista
 
-// const button = document.createElement("button");
-//     meuLivro.appendChild(button);
-//     button.textContent = "Marcar como lido";
-//     button.classList.add("botao-lido");
+const maeDosBotoes = document.getElementById("botoes");
+const botaoFeito = document.createElement("button");
+maeDosBotoes.appendChild(botaoFeito);
+botaoFeito.textContent = "Todas feitas";
+botaoFeito.classList.add("tarefa_feita");
+botaoFeito.addEventListener("click", function(evento){
+lista.classList.add("excluir");
+})
+
+
     

@@ -42,37 +42,24 @@ formulario.addEventListener("submit", function(evento){
     } 
 });
 
-const divBotao = document.querySelector('.content__tarefas');
+const divBotao = document.getElementById('botoes');
 const botaoExcluirTudo = document.createElement('button');
 divBotao.appendChild(botaoExcluirTudo);
 botaoExcluirTudo.textContent = 'Excluir Tarefas';
 botaoExcluirTudo.classList.add('botao-excluir-tudo', 'botoes');
 
 botaoExcluirTudo.addEventListener('click', function(evento){
-    const lista = document.getElementById('lista');
     lista.classList.add('tarefas-excluidas');
 });
 
 
-
-
-// Fase 3
-// Marcar todos os itens como feito
-// Limpar lista, excluir todos os itens da lista
-
-// const button = document.createElement("button");
-//     meuLivro.appendChild(button);
-//     button.textContent = "Marcar como lido";
-//     button.classList.add("botao-lido");
-
-const maeDosBotoes = document.getElementById("botoes");
 const botaoFeito = document.createElement("button");
-maeDosBotoes.appendChild(botaoFeito);
+divBotao.appendChild(botaoFeito);
 botaoFeito.textContent = "Todas feitas";
-botaoFeito.classList.add("tarefa_feita");
+botaoFeito.classList.add("botao-excluir-tudo");
 botaoFeito.addEventListener("click", function(evento){
-lista.classList.add("excluir");
-})
+    lista.classList.add("excluir");
+});
 
 
     

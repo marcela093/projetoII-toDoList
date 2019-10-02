@@ -23,8 +23,17 @@ formulario.addEventListener("submit", function(evento){
         listaTarefa.appendChild(confere);
         confere.textContent = "x";
         formulario.reset();  
+
+        confere.addEventListener('click', function(evento){
+            if(evento){
+                listaTarefa.classList.add('excluir-botao');
+            }
+        })
+        
     }   
-           
+   
+    
+    
 })
 
 

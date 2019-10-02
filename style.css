@@ -66,6 +66,10 @@ li {
     margin-right: 20px;
 }
 
+.excluir-botao{
+    display: none;
+}
+
 @media (min-width: 768px) {
     body{
         display: flex;

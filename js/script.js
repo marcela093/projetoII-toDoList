@@ -16,7 +16,7 @@ formulario.addEventListener("submit", function(evento){
      todosLidos.addEventListener("click", function(evento){
      lista.appendChild(todosLidos);
      todosLidos.classList.add("todos-lidos");
-    })
+    });
 
     }else { 
         let listaTarefa = document.createElement("li");

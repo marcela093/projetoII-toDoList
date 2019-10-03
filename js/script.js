@@ -2,6 +2,7 @@
 
 const formulario = document.getElementById("formulario");
 const lista = document.getElementById("lista");
+const contentTarefa = document.getElementById("content__tarefas");
 
 formulario.addEventListener("submit", function(evento){
     evento.preventDefault();
@@ -25,6 +26,7 @@ formulario.addEventListener("submit", function(evento){
         let listaTarefa = document.createElement("li");
         lista.appendChild(listaTarefa);
         listaTarefa.textContent = tarefa;
+        listaTarefa.setAttribute("class", "linha");
         erro.textContent = ""; 
         let confere = document.createElement("p");
         listaTarefa.appendChild(confere);
@@ -32,13 +34,38 @@ formulario.addEventListener("submit", function(evento){
         listaTarefa.addEventListener("click", function(evento){
         listaTarefa.classList.add("excluir");
         })    
-        formulario.reset();  
 
         confere.addEventListener('click', function(evento){
             if(evento){
                 listaTarefa.classList.add('excluir-botao');
             }
         });
+
+        formulario.reset();  
+
+        lista.setAttribute("draggable", true);
+        listaTarefa.setAttribute("draggable", true);
+        contentTarefa.setAttribute("draggable", true);
+        console.log(contentTarefa)
+        let dragging;
+
+        lista.addEventListener("dragstart", function(ev) {
+            console.log("dragstart");
+            dragging = ev.target.closest(".linha");
+        });
+
+        listaTarefa.addEventListener("dragover", function(ev) {
+            console.log("dragover");
+            ev.preventDefault();
+            const node = ev.target.closest(".linha");
+            this.parentNode.insertBefore(dragging, node);
+        });
+
+        listaTarefa.addEventListener("dragend", function(ev) {
+            dragging = null;
+            console.log("dragging");
+        });
+       
     } 
 });
 

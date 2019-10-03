@@ -60,12 +60,12 @@ button {
     height: 12vh;
 }
 
-.content__tarefas {
+#content__tarefas {
     height: 49vh;
     background-color: #ffffff;
 }
 
-li {
+.linha {
     font-size: 15px;
     display: flex; 
     justify-content: space-between;
@@ -89,7 +89,7 @@ li {
 }
 
 .botao-excluir-tudo{
-    background-color: :#ba7af8;
+    background-color:  #ba7af8;
     color: white;
     font-size: 10px;
     width: 35vw;

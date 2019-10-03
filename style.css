@@ -37,7 +37,9 @@ body {
     /* margin-bottom: 15%; */
     height: 20vh;
 }
-
+p {
+    font-size: 12px;
+}
 .erro {
     font-size: 15px;
     color: #ff0000;
@@ -48,7 +50,7 @@ button {
     height: 8vh;
     background-color:#ba7af8;
     color: #ffffff;
-    border: none;
+    /* border: none; */
     font-weight: bold;
     text-transform: uppercase;
 }

@@ -33,21 +33,23 @@ formulario.addEventListener("submit", function(evento){
         lista.setAttribute("draggable", true);
         listaTarefa.setAttribute("draggable", true);
         contentTarefa.setAttribute("draggable", true);
+        let dragging;
 
         lista.addEventListener("dragstart", function(ev) {
             console.log("dragstart");
             dragging = ev.target.closest(".linha");
         })
 
-        lista.addEventListener("dragover", function(ev) {
+        listaTarefa.addEventListener("dragover", function(ev) {
             console.log("dragover");
             ev.preventDefault();
             const node = ev.target.closest(".linha");
-            this.insertBefore(dragging, node);
+            this.parentNode.insertBefore(dragging, node);
         })
 
-        lista.addEventListener("dragend", function(ev) {
+        listaTarefa.addEventListener("dragend", function(ev) {
             dragging = null;
+            console.log("dragging");
         })    
     }    
 })
@@ -65,6 +67,4 @@ formulario.addEventListener("submit", function(evento){
 
 
 
-    // definir o elemento que eu quero que seja arrastado
-    // os elementos têm que estar em uma div para quer eu possa selecioná-los
-    // dar uma classe para a div
+    

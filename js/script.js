@@ -33,7 +33,12 @@ formulario.addEventListener("submit", function(evento){
         confere.textContent = "x";
         listaTarefa.addEventListener("click", function(evento){
         listaTarefa.classList.add("excluir");
-        })    
+        }) 
+        
+        listaTarefa.addEventListener('dblclick', function(){
+            listaTarefa.classList.remove('excluir');
+            listaTarefa.setAttribute('contentEditable', true);
+        })
 
         confere.addEventListener('click', function(evento){
             if(evento){
@@ -87,6 +92,9 @@ botaoFeito.classList.add("botao-excluir-tudo");
 botaoFeito.addEventListener("click", function(evento){
     lista.classList.add("excluir");
 });
+
+
+
 
 
     

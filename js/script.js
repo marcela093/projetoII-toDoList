@@ -6,7 +6,6 @@ const botaoRemover = document.createElement("button");
 const botaoExcluirTudo = document.createElement('button');
 const botaoFeito = document.createElement("button");
 const etiqueta = document.getElementById("opcoes__etiquetas");
-let opcoes = etiqueta.value;
 
 divBotao.appendChild(botaoExcluirTudo);
 divBotao.appendChild(botaoFeito);
@@ -41,19 +40,25 @@ formulario.addEventListener("submit", function(evento){
 
     }else { 
         let listaTarefa = document.createElement("li");
+
         lista.appendChild(listaTarefa);
-        listaTarefa.textContent = tarefa;
+
+        let opcoesEtiqueta = document.createElement("span");
+        listaTarefa.appendChild(opcoesEtiqueta);
+        opcoesEtiqueta.innerHTML = etiqueta.value;
+        opcoesEtiqueta.classList.add("opcoesEtiqueta");
+  
+        listaTarefa.innerHTML += tarefa;
         listaTarefa.setAttribute("class", "linha");
         erro.textContent = "";
-
+    
         let confere = document.createElement("p");
         listaTarefa.appendChild(confere);
         confere.textContent = "x";
         listaTarefa.addEventListener("click", function(evento){
-        listaTarefa.classList.add("excluir");
-        })    
-        console.log(opcoes)
-
+            listaTarefa.classList.add("excluir");
+        });  
+        
         confere.addEventListener('click', function(evento){
             if(evento){
                 listaTarefa.classList.add('excluir-botao');

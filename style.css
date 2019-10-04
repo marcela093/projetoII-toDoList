@@ -34,8 +34,11 @@ body {
 .input-de-texto {
     border: none;  
     text-align: center;
-    /* margin-bottom: 15%; */
     height: 20vh;
+}
+
+p {
+    font-size: 12px;
 }
 
 .erro {
@@ -48,7 +51,6 @@ button {
     height: 8vh;
     background-color:#ba7af8;
     color: #ffffff;
-    border: none;
     font-weight: bold;
     text-transform: uppercase;
 }
@@ -83,6 +85,10 @@ button {
     font-size: 12px;
 }
 
+.opcoesEtiqueta { 
+    background-color:#ba7af8;
+    color: white; 
+}
 
 .excluir-botao{
     display: none;

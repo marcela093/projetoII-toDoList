@@ -12,19 +12,27 @@
         <div class="content__titulo">
                 <h1>Adicione uma nova tarefa</h1>
         </div>
-         <div class="content__input">
-             <form id="formulario" >
-                    <span id="erro"></span>
+        <div class="content__input">
+            <form id="formulario">
+                <span id="erro"></span>
+                <label for="opcoes__usuario" id="opcoes">
+                    <select name="etiqueta" id="opcoes__etiquetas">
+                        <option value="opcoes">Escolha uma opção</option>
+                        <option value="academia">Academia</option>
+                        <option value="estudar">Estudo</option>
+                        <option value="feira">Feira</option>
+                        <option value="mercado">Mercado</option>
+                    </select>
+                </label>
                 <input type="text" maxlength="120" class="input-de-texto" placeholder="Digite aqui">
-                <button>add</button>
-             </form>
+                <button class="botao__add">add</button>
+            </form>
         </div>
         <div id="content__tarefas">
              <ul id="lista"></ul>
         </div>
         <div id="botoes"></div>
     </section>
-    
-<script src="./js/script.js"></script>
+    <script src="./js/script.js"></script>
 </body>
 </html>

@@ -1,8 +1,25 @@
-
-
 const formulario = document.getElementById("formulario");
 const lista = document.getElementById("lista");
 const contentTarefa = document.getElementById("content__tarefas");
+const divBotao = document.getElementById('botoes');
+const botaoExcluirTudo = document.createElement('button');
+const botaoFeito = document.createElement("button");
+const botaoRemover = document.createElement("button");
+const etiqueta = document.getElementById("opcoes__etiquetas");
+let opcoes = etiqueta.value;
+
+divBotao.appendChild(botaoExcluirTudo);
+divBotao.appendChild(botaoFeito);
+divBotao.appendChild(botaoRemover);
+
+botaoExcluirTudo.textContent = 'Excluir Tarefas';
+botaoExcluirTudo.classList.add('botao-excluir-tudo', 'botoes');
+
+botaoFeito.textContent = "Todas feitas";
+botaoFeito.classList.add("botao-excluir-tudo");
+
+botaoRemover.textContent ="Remover completos";
+botaoRemover.classList.add("botao-excluir-tudo");
 
 formulario.addEventListener("submit", function(evento){
     evento.preventDefault();
@@ -24,21 +41,29 @@ formulario.addEventListener("submit", function(evento){
 
     }else { 
         let listaTarefa = document.createElement("li");
+
         lista.appendChild(listaTarefa);
-        listaTarefa.textContent = tarefa;
+
+        let opcoesEtiqueta = document.createElement("span");
+        listaTarefa.appendChild(opcoesEtiqueta);
+        opcoesEtiqueta.innerHTML = etiqueta.value;
+        opcoesEtiqueta.classList.add("opcoesEtiqueta");
+  
+        listaTarefa.innerHTML += tarefa;
         listaTarefa.setAttribute("class", "linha");
-        erro.textContent = ""; 
+        erro.textContent = "";
+
         let confere = document.createElement("p");
         listaTarefa.appendChild(confere);
         confere.textContent = "x";
         listaTarefa.addEventListener("click", function(evento){
         listaTarefa.classList.add("excluir");
-        }) 
-        
+        });
+
         listaTarefa.addEventListener('dblclick', function(){
             listaTarefa.classList.remove('excluir');
             listaTarefa.setAttribute('contentEditable', true);
-        })
+        });
 
         confere.addEventListener('click', function(evento){
             if(evento){
@@ -70,25 +95,19 @@ formulario.addEventListener("submit", function(evento){
             dragging = null;
             console.log("dragging");
         });
-       
+        
+        botaoRemover.addEventListener("click", function() {
+            if (listaTarefa.classList.contains("excluir")){
+            listaTarefa.remove();
+            }
+        });
     } 
 });
-
-const divBotao = document.getElementById('botoes');
-const botaoExcluirTudo = document.createElement('button');
-divBotao.appendChild(botaoExcluirTudo);
-botaoExcluirTudo.textContent = 'Excluir Tarefas';
-botaoExcluirTudo.classList.add('botao-excluir-tudo', 'botoes');
 
 botaoExcluirTudo.addEventListener('click', function(evento){
     lista.classList.add('tarefas-excluidas');
 });
 
-
-const botaoFeito = document.createElement("button");
-divBotao.appendChild(botaoFeito);
-botaoFeito.textContent = "Todas feitas";
-botaoFeito.classList.add("botao-excluir-tudo");
 botaoFeito.addEventListener("click", function(evento){
     lista.classList.add("excluir");
 });
